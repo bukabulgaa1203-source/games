@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Санасан тоог таах{% endblock %}
+
+{% block content %}
+<div class="page-card">
+    <h1>1. Санасан тоог таах</h1>
+    <p class="muted">Компьютер 1-100 хооронд нэг тоо санасан. Та таагаарай.</p>
+
+    <div class="message-box">{{ message }}</div>
+    <div class="score-box">Оролдлого: <strong>{{ tries }}</strong></div>
+
+    <form method="post" class="game-form">
+        <input type="number" name="guess" placeholder="Тоо оруулна уу" required>
+        <button class="btn btn-primary" type="submit">Таах</button>
+    </form>
+
+    <form method="post">
+        <button class="btn btn-secondary" type="submit" name="reset" value="1">Шинээр эхлэх</button>
+    </form>
+</div>
+{% endblock %}

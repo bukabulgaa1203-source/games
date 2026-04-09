@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Хайч, Чулуу, Даавуу{% endblock %}
+
+{% block content %}
+<div class="page-card">
+    <h1>2. Хайч, Чулуу, Даавуу</h1>
+    <p class="muted">Сонголтоо хийгээд компьютертэй тоглоорой.</p>
+
+    <div class="choice-row">
+        <form method="post"><button class="choice-btn" name="choice" value="Хайч">✂️<span>Хайч</span></button></form>
+        <form method="post"><button class="choice-btn" name="choice" value="Чулуу">🪨<span>Чулуу</span></button></form>
+        <form method="post"><button class="choice-btn" name="choice" value="Даавуу">📄<span>Даавуу</span></button></form>
+    </div>
+
+    {% if result %}
+    <div class="result-panel">
+        <p><strong>Таны сонголт:</strong> {{ player_choice }}</p>
+        <p><strong>Компьютер:</strong> {{ computer_choice }}</p>
+        <p class="big-result">{{ result }}</p>
+    </div>
+    {% endif %}
+
+    <div class="score-box">
+        Хожсон: <strong>{{ score.win }}</strong> |
+        Хожигдсон: <strong>{{ score.lose }}</strong> |
+        Тэнцсэн: <strong>{{ score.draw }}</strong>
+    </div>
+
+    <form method="post">
+        <button class="btn btn-secondary" type="submit" name="reset" value="1">Оноо тэглэх</button>
+    </form>
+</div>
+{% endblock %}

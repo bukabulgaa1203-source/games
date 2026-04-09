@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: mini-games-website
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    autoDeploy: true

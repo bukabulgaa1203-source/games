@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Төөрдөг байшин{% endblock %}
+{% block extra_head %}
+<script defer src="{{ url_for('static', filename='maze.js') }}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="page-card">
+    <h1>5. Төөрдөг байшин</h1>
+    <p class="muted">⬅️ ⬆️ ⬇️ ➡️ товчлуураар ногоон дөрвөлжинг шар гарц руу хүргээрэй.</p>
+
+    <div class="maze-layout">
+        <canvas id="mazeCanvas" width="420" height="420"></canvas>
+        <div class="maze-info">
+            <div class="legend"><span class="legend-box player"></span> Тоглогч</div>
+            <div class="legend"><span class="legend-box exit"></span> Гарц</div>
+            <div class="legend"><span class="legend-box wall"></span> Хана</div>
+            <button class="btn btn-secondary" onclick="resetMaze()">Дахин эхлэх</button>
+            <div id="mazeStatus" class="message-box">Тоглоом эхэллээ.</div>
+        </div>
+    </div>
+</div>
+{% endblock %}

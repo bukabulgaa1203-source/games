@@ -1,0 +1,178 @@
+:root{
+  --bg:#0b1020;
+  --panel:rgba(18,25,47,0.72);
+  --panel-2:rgba(27,35,63,0.88);
+  --line:rgba(255,255,255,0.10);
+  --text:#eef3ff;
+  --muted:#b5c0e0;
+  --accent:#8b5cf6;
+  --accent-2:#22d3ee;
+  --success:#34d399;
+  --warning:#fbbf24;
+  --shadow:0 20px 60px rgba(0,0,0,0.35);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:linear-gradient(135deg,#09111f,#10162e 42%,#141b3a 100%);color:var(--text);min-height:100%}
+a{text-decoration:none;color:inherit}
+
+.bg-orb{
+  position:fixed; border-radius:50%; filter:blur(90px); opacity:.25; z-index:0;
+}
+.orb-1{width:320px;height:320px;background:#7c3aed;top:0;left:-70px}
+.orb-2{width:350px;height:350px;background:#06b6d4;right:-80px;bottom:0}
+
+.site-header{
+  position:sticky; top:0; z-index:5;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:18px 40px; backdrop-filter:blur(14px);
+  background:rgba(10,14,28,0.45); border-bottom:1px solid var(--line);
+}
+.site-header nav{display:flex;gap:18px}
+.site-header nav a{color:var(--muted)}
+.brand{font-weight:800; letter-spacing:.3px}
+
+.container{
+  position:relative; z-index:1;
+  max-width:1180px; margin:0 auto; padding:36px 20px 60px;
+}
+
+.hero{
+  display:grid; grid-template-columns:1.2fr .9fr; gap:24px; align-items:center; margin-top:16px;
+}
+.hero-text, .hero-panel, .page-card{
+  background:var(--panel); border:1px solid var(--line); border-radius:28px;
+  box-shadow:var(--shadow); backdrop-filter:blur(14px);
+}
+.hero-text{padding:42px}
+.hero-text h1{font-size:54px; line-height:1.02; margin:14px 0 14px}
+.hero-text p{font-size:18px; color:var(--muted); max-width:640px}
+.pill{
+  display:inline-block; padding:8px 14px; border-radius:999px;
+  background:rgba(139,92,246,.18); border:1px solid rgba(139,92,246,.4); color:#dfd1ff; font-size:14px
+}
+.hero-actions{display:flex; gap:14px; margin-top:24px}
+.hero-panel{
+  padding:30px;
+  display:grid; grid-template-columns:1fr; gap:16px;
+}
+.stat-card{
+  background:var(--panel-2); border:1px solid var(--line); border-radius:22px; padding:24px;
+}
+.stat-number{font-size:40px; font-weight:800}
+.stat-label{color:var(--muted); margin-top:6px}
+
+.section-title{font-size:30px; margin:38px 0 18px}
+.game-grid{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:18px;
+}
+.game-card{
+  display:block; padding:22px; border-radius:24px; background:var(--panel);
+  border:1px solid var(--line); box-shadow:var(--shadow); transition:.2s ease;
+}
+.game-card:hover{transform:translateY(-6px); border-color:rgba(34,211,238,.45)}
+.game-card-top{display:flex; justify-content:space-between; align-items:center}
+.game-icon{
+  width:48px;height:48px;border-radius:16px;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,rgba(139,92,246,.35),rgba(34,211,238,.25));
+  font-weight:800
+}
+.arrow{font-size:22px;color:var(--muted)}
+.game-card h3{font-size:22px;margin:18px 0 8px}
+.game-card p{color:var(--muted);line-height:1.55}
+
+.page-card{padding:34px; max-width:920px; margin:20px auto}
+.page-card h1{font-size:36px; margin:0 0 6px}
+.muted{color:var(--muted); margin-bottom:18px}
+
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  border:none; border-radius:16px; padding:12px 18px; font-size:15px; font-weight:700;
+  cursor:pointer;
+}
+.btn-primary{
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  color:white;
+}
+.btn-secondary{
+  background:rgba(255,255,255,.06); color:var(--text); border:1px solid var(--line)
+}
+
+.game-form{display:flex; gap:12px; flex-wrap:wrap; margin:20px 0}
+input[type="number"], input[type="text"]{
+  flex:1; min-width:220px; padding:14px 16px; border-radius:16px;
+  border:1px solid var(--line); background:rgba(255,255,255,.05); color:var(--text); outline:none;
+}
+.message-box{
+  margin:16px 0; padding:14px 16px; border-radius:18px;
+  background:rgba(34,211,238,.10); border:1px solid rgba(34,211,238,.25)
+}
+.score-box{
+  margin:14px 0 18px; padding:12px 16px; border-radius:18px;
+  background:rgba(255,255,255,.05); border:1px solid var(--line)
+}
+
+.choice-row{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:22px 0;
+}
+.choice-row form{margin:0}
+.choice-btn{
+  width:100%; min-height:120px; border:none; border-radius:22px; cursor:pointer;
+  background:var(--panel-2); color:var(--text); border:1px solid var(--line); font-size:34px;
+  display:flex; flex-direction:column; gap:10px; align-items:center; justify-content:center;
+}
+.choice-btn span{font-size:17px; font-weight:700}
+.result-panel{
+  padding:18px; border-radius:22px; background:rgba(139,92,246,.10);
+  border:1px solid rgba(139,92,246,.26); margin-bottom:18px
+}
+.big-result{font-size:24px; font-weight:800}
+
+.image-box{
+  display:flex; justify-content:center; align-items:center; padding:24px;
+  background:rgba(255,255,255,.04); border-radius:24px; border:1px solid var(--line); margin:16px 0 20px
+}
+.image-box img{max-width:260px; width:100%; height:auto}
+.option-grid{
+  display:grid; grid-template-columns:repeat(2,1fr); gap:14px;
+}
+.option-grid form{margin:0}
+.option-btn{
+  width:100%; padding:16px; border-radius:18px; border:1px solid var(--line);
+  background:var(--panel-2); color:var(--text); font-weight:700; cursor:pointer
+}
+
+.fib-sequence{
+  display:flex; gap:12px; flex-wrap:wrap; margin:20px 0;
+}
+.fib-sequence span{
+  width:72px; height:72px; border-radius:20px; display:flex; align-items:center; justify-content:center;
+  background:linear-gradient(135deg,rgba(139,92,246,.22),rgba(34,211,238,.18)); border:1px solid var(--line);
+  font-size:26px; font-weight:800
+}
+
+.maze-layout{
+  display:grid; grid-template-columns:420px 1fr; gap:24px; align-items:start
+}
+#mazeCanvas{
+  border-radius:22px; border:1px solid var(--line); background:#08101b;
+}
+.maze-info{display:flex; flex-direction:column; gap:14px}
+.legend{display:flex; align-items:center; gap:10px; color:var(--muted)}
+.legend-box{display:inline-block; width:18px; height:18px; border-radius:4px}
+.legend-box.player{background:#34d399}
+.legend-box.exit{background:#fbbf24}
+.legend-box.wall{background:#475569}
+
+@media (max-width: 920px){
+  .hero{grid-template-columns:1fr}
+  .game-grid{grid-template-columns:1fr 1fr}
+  .maze-layout{grid-template-columns:1fr}
+  #mazeCanvas{width:100%; max-width:420px; height:auto}
+}
+@media (max-width: 640px){
+  .site-header{padding:16px 18px}
+  .hero-text h1{font-size:38px}
+  .game-grid, .choice-row, .option-grid{grid-template-columns:1fr}
+  .page-card{padding:22px}
+}

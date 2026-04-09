@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Зураг таах{% endblock %}
+
+{% block content %}
+<div class="page-card">
+    <h1>3. Зураг таах</h1>
+    <p class="muted">Зурагт юу байгааг зөв сонго.</p>
+
+    {% if feedback %}
+    <div class="message-box">{{ feedback }}</div>
+    {% endif %}
+
+    <div class="image-box">
+        <img src="{{ url_for('static', filename='images/' + question.file) }}" alt="guess image">
+    </div>
+
+    <div class="score-box">Оноо: <strong>{{ score }}</strong></div>
+
+    <div class="option-grid">
+        {% for option in question.options %}
+        <form method="post">
+            <button class="option-btn" type="submit" name="option" value="{{ option }}">{{ option }}</button>
+        </form>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

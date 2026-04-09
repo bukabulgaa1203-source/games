@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Мини тоглоомын вебсайт{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-text">
+        <span class="pill">Python + Flask</span>
+        <h1>5 жижиг тоглоомтой<br>гоё дизайнтай вебсайт</h1>
+        <p>
+            Доорх картуудаас тоглоомоо сонгон тоглоорой.
+            Вебсайт нь VS Code дээр өөрийн компьютер дээр ажиллахад бэлэн.
+        </p>
+        <div class="hero-actions">
+            <a class="btn btn-primary" href="#games">Тоглоом сонгох</a>
+            <a class="btn btn-secondary" href="https://code.visualstudio.com/" target="_blank" rel="noreferrer">VS Code</a>
+        </div>
+    </div>
+    <div class="hero-panel">
+        <div class="stat-card">
+            <div class="stat-number">5</div>
+            <div class="stat-label">Тоглоом</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">1</div>
+            <div class="stat-label">Сайхан дизайн</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-number">∞</div>
+            <div class="stat-label">Олон дахин тоглож болно</div>
+        </div>
+    </div>
+</section>
+
+<section id="games">
+    <h2 class="section-title">Тоглоомууд</h2>
+    <div class="game-grid">
+        {% for game in games %}
+        <a class="game-card" href="/{{ game.slug }}">
+            <div class="game-card-top">
+                <span class="game-icon">{{ loop.index }}</span>
+                <span class="arrow">→</span>
+            </div>
+            <h3>{{ game.title }}</h3>
+            <p>{{ game.description }}</p>
+        </a>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

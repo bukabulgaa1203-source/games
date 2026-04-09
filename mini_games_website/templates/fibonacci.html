@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Фибоначчигийн таавар{% endblock %}
+
+{% block content %}
+<div class="page-card">
+    <h1>4. Фибоначчигийн таавар</h1>
+    <p class="muted">Дараагийн тоог олоорой.</p>
+
+    {% if feedback %}
+    <div class="message-box">{{ feedback }}</div>
+    {% endif %}
+
+    <div class="fib-sequence">
+        {% for n in question.sequence %}
+        <span>{{ n }}</span>
+        {% endfor %}
+        <span>?</span>
+    </div>
+
+    <div class="score-box">Зөв хариулсан: <strong>{{ score }}</strong></div>
+
+    <form method="post" class="game-form">
+        <input type="number" name="answer" placeholder="Дараагийн тоо" required>
+        <button class="btn btn-primary" type="submit">Шалгах</button>
+    </form>
+
+    <form method="post">
+        <button class="btn btn-secondary" type="submit" name="reset" value="1">Оноо тэглэх</button>
+    </form>
+</div>
+{% endblock %}
